@@ -1,0 +1,29 @@
+#   Question 1
+print("    5\n   45\n  345\n 2345\n12345\n")
+
+# Question 2
+a = 3
+b = 2
+print("3 + 2 = ", a + b)
+print("3 - 2 = ", a - b)
+print("3 * 2 = ", a * b)
+print("3 / 2 = ", a / b)
+print("3 // 2 = ", a // b)
+print("3 % 2 = ", a % b)
+print("3 ** 2 = ", a ** b)
+
+# Question 3
+a = float(input('input a = '))
+b = float(input('input b = '))
+c = float(input('input c = '))
+discriminant = (b ** 2 - 4 * a * c) ** 0.5
+x1 = (-b + discriminant) / (2 * a)
+x2 = (-b - discriminant) / (2 * a)
+print(x1, x2)
+
+
+body_w = float(input('Input your weight(kg) = '))
+body_h = float(input('Input your height(m) = '))
+body_hsquare = body_h ** 2
+bmi_formula = body_w / body_hsquare
+print("This is your BMI = ", bmi_formula)
