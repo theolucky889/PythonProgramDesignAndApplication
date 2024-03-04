@@ -8,3 +8,11 @@ print(f'{a} / {b} =  {a / b}')
 print(f'{a} // {b} =  {a // b}')
 print(f'{a} % {b} =  {a % b}')
 print(f'{a} ** {b} =  {a ** b}')
+
+# Question 2
+body_w = float(input('Input your weight(kg) = '))
+body_h = float(input('Input your height(cm) = '))
+body_h_m = body_h / 100
+body_hsquare = body_h_m ** 2
+bmi_formula = body_w / body_hsquare
+print("This is your BMI = ", bmi_formula)
