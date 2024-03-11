@@ -22,3 +22,21 @@ elif negative:
         print(f"{num} is a negative odd number")
 else:
     print("The number is zero")
+
+
+# 2
+array_odd_input = []
+array_even_input = []
+
+i = 0
+while i < 5:
+    input_num = int(input(f"integer{i+1}:"))
+    if input_num % 2 == 0:
+        array_even_input.append(input_num)
+    else:
+        array_odd_input.append(input_num)
+    i += 1
+
+print("Output")
+print(f"{len(array_even_input)} even numbers: {array_even_input}")
+print(f"{len(array_odd_input)} odd numbers: {array_odd_input}")
