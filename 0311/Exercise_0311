@@ -61,3 +61,21 @@ elif option == "2":
     height = (float(input("Please enter your height(cm): ")))
     weight = (float(input("Please enter your weight(kg): ")))
     print(f"Your BMI is {calculate_bmi(weight, height)}")
+
+
+
+# 4
+def print_text_graphics(n):
+    if n < 2 or n > 9:
+        print("Enter a positive integer n, where 2 <= n <= 9")
+        return
+    for i in range(1, n + 1):
+        print(" " * (n - i), end = "")
+    for j in range(n, n - i, -1):
+        print(j, end = "")
+        for j in range(n - i + 2, n +1):
+            print(j, end = "")
+        print()
+
+n = int(input("Enter a positive integer n: "))
+print_text_graphics(n)
