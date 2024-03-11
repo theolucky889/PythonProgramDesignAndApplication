@@ -1,0 +1,201 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0311/109990007-2024-0311.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=4;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br>請使用 <font color="#0000FF">input</font> 來輸入一個整數 value，再判斷該數的<font color="#0000FF">正負</font>與是<font color="#0000FF">奇數或偶數</font>，並將結果印出來。<br>例如，僅舉兩個情況說明，<br><hr><font color="#0000FF">請輸入一個整數: -5<br>-5 是負的奇數<br><br>請輸入一個整數: 4<br>4 是正的偶數</font><hr> </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0311_files/109990007-2024-0311-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">try:
+    num = int(input("Enter an integer: "))
+except ValueError:
+    print("Invalid Input")
+    exit(1)
+
+positive = num &gt; 0
+negative = num &lt; 0
+even = num % 2 == 0
+odd = not even
+
+if positive:
+    if even:
+        print(f"{num} is a positive even number")
+    else:
+        print(f"{num} is a positive odd number")
+elif negative:
+    if even:
+        print(f"{num} is a negative even number")
+    else:
+        print(f"{num} is a negative odd number")
+else:
+    print("The number is zero")</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請寫 Python 程式，使用 <font color="#0000FF">while</font> 與 <font color="#0000FF">input</font>，讓使用者輸入 <font color="#0000FF">5</font> 個整數，最後<font color="#0000FF">請分別印出其中的奇數與偶數，並註明各有幾個</font>。<br>例如，輸入資料如下:<br><hr><font color="#0000FF">整數1: 12<br>整數2: 35<br>整數3: 73<br>整數4: 92<br>整數5: 55<br>輸出:<br>2個偶數:12 92 <br>3個奇數:35 73 55</font><hr> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0311_files/109990007-2024-0311-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">array_odd_input = []
+array_even_input = []
+
+i = 0
+while i &lt; 5:
+    input_num = int(input(f"integer{i+1}:"))
+    if input_num % 2 == 0:
+        array_even_input.append(input_num)
+    else:
+        array_odd_input.append(input_num)
+    i += 1
+
+print("Output")
+print(f"{len(array_even_input)} even numbers: {array_even_input}")
+print(f"{len(array_odd_input)} odd numbers: {array_odd_input}")</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise2">
+ <div onclick="hideOrShow(2)"><pre>題目：3<br>請先顯示一個選項表，讓使用者可以選擇想要執行的項目，再根據該選項執行對應的計算。<br>請以計算下列內容為例，來撰寫 Python 程式。<br>1)攝氏到華氏的溫度轉換<br>2)計算 BMI<br>Celsius-Fahrenheit-Conversion.jpg<br><br>例如，<br><hr>1)攝氏到華氏的溫度轉換<br>2)計算 BMI<br>你的選擇是:<font color="#0000FF">1</font><br><br>請輸入攝氏溫度:<font color="#0000FF">37</font><br><font color="#0000FF">約等於華氏 98.6 度。</font><hr><br>1)攝氏到華氏的溫度轉換<br>2)計算 BMI<br>你的選擇是:<font color="#0000FF">2</font><br><br>請輸入身高(cm):<font color="#0000FF">170</font><br>請輸入體重(kg):<font color="#0000FF">70</font><br><font color="#0000FF">BMI = 24.2。</font><hr><img src="./109990007-2024-0311_files/Celsius-Fahrenheit-Conversion.jpg"> <br><img src="./109990007-2024-0311_files/BMIFormula.jpg"> <hr> </pre>
+</div> <div class="myImage" id="myImage2" name="image2">   <img src="./109990007-2024-0311_files/109990007-2024-0311-3.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode2" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">print("(1) Celcius to Fahrenheit temperature conversion")
+print("(2) Calculate BMI (kg, cm)")
+option = input("You Choose: ")
+
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+def calculate_bmi(weight, height):
+    return weight * 1000 / (height ** 2)
+
+if option == "1":
+    celsius = float(input("Please enter the temperature in Celsius: "))
+    print(f"Approximately {celsius_to_fahrenheit(celsius)} degrees Fahrenheit")
+elif option == "2":
+    height = (float(input("Please enter your height(cm): ")))
+    weight = (float(input("Please enter your weight(kg): ")))
+    print(f"Your BMI is {calculate_bmi(weight, height)}")</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise3">
+ <div onclick="hideOrShow(3)"><pre>題目：4<br>(<font color="#0000FF">參考題，可以不用做！</font>)<br>請使用 <font color="#0000FF">for-in-loop</font> 來印出下列的內容:<br>請輸入一個<font color="#0000FF">正整數 n</font>，其範圍為 <font color="#0000FF">2 &lt;= n &lt;= 9</font>，接著請印出下列的文字圖形。<br>例如，<br><hr>請輸入一個正整數 n: <font color="#0000FF">5</font><br><font color="#0000FF">    5<br>   454<br>  34543<br> 2345432<br>123454321</font><hr> </pre>
+</div> <div class="myImage" id="myImage3" name="image3">   <img src="./109990007-2024-0311_files/109990007-2024-0311-4.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode3" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">n = int(input("請輸入一個正整數 2 &lt;= n &lt;= 9: "))
+
+for i in range(1, n + 1):
+    # 印出空白以對齊數字
+    print(" " * (n - i), end="")
+    # 印出遞減的數字
+    for j in range(n, n - i, -1):
+        print(j, end="")
+    # 印出遞增的數字
+    for j in range(n - i + 2, n + 1):
+        print(j, end="")
+    print()</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
