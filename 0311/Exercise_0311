@@ -40,3 +40,24 @@ while i < 5:
 print("Output")
 print(f"{len(array_even_input)} even numbers: {array_even_input}")
 print(f"{len(array_odd_input)} odd numbers: {array_odd_input}")
+
+
+
+# 3
+print("(1) Celcius to Fahrenheit temperature conversion")
+print("(2) Calculate BMI (kg, cm)")
+option = input("You Choose: ")
+
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+def calculate_bmi(weight, height):
+    return weight * 1000 / (height ** 2)
+
+if option == "1":
+    celsius = float(input("Please enter the temperature in Celsius: "))
+    print(f"Approximately {celsius_to_fahrenheit(celsius)} degrees Fahrenheit")
+elif option == "2":
+    height = (float(input("Please enter your height(cm): ")))
+    weight = (float(input("Please enter your weight(kg): ")))
+    print(f"Your BMI is {calculate_bmi(weight, height)}")
