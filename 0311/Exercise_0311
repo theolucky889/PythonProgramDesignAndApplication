@@ -1,0 +1,24 @@
+# 1
+try:
+    num = int(input("Enter an integer: "))
+except ValueError:
+    print("Invalid Input")
+    exit(1)
+
+positive = num > 0
+negative = num < 0
+even = num % 2 == 0
+odd = not even
+
+if positive:
+    if even:
+        print(f"{num} is a positive even number")
+    else:
+        print(f"{num} is a positive odd number")
+elif negative:
+    if even:
+        print(f"{num} is a negative even number")
+    else:
+        print(f"{num} is a negative odd number")
+else:
+    print("The number is zero")
