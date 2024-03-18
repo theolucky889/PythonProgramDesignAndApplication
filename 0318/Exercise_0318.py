@@ -1,28 +1,19 @@
 # 1
-# Defining a function to categorize and print scores based on the given criteria
+n = 5
+count = 0
+over_60 = ">= 60:"
+less_60 = "< 60:"
 
-def categorize_scores(scores):
-    # Lists to hold categorized scores
-    ge_60 = []  # Scores greater than or equal to 60
-    lt_60 = []  # Scores less than 60
-
-    # Iterate over the scores to categorize them
-    for score in scores:
-        if score >= 60:
-            ge_60.append(score)
-        else:
-            lt_60.append(score)
-    
-    # Returning the categorized scores
-    return ge_60, lt_60
-
-# Simulating the input scores
-input_scores = [48, 67, 52, 79, 94]
-
-# Categorizing and retrieving the scores
-greater_equal_60, less_than_60 = categorize_scores(input_scores)
-print(">= 60:", greater_equal_60)
-print(" < 60:", less_than_60)
+while count < n:
+    inp = input(f"number {count + 1}:")
+    value = int(inp)
+    if value >= 60:
+        over_60 = over_60 + f" {str(value)}"
+    else:
+        less_60 += f" {str(value)}"
+    count = count + 1 # count += 1
+print(">= 60:", over_60)
+print(" < 60:", less_60)
 
 #2
 # Defining a function to print the desired text pattern
