@@ -1,0 +1,169 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0318/109990007-2024-0318.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=4;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br>模擬由鍵盤輸入五科的成績，並將大於或等於60的分數 與 高於60的分數，分別印出來。<br>例如，<br><hr>請輸入第 1 科的成績:<font color="#0000FF">48</font><br>請輸入第 2 科的成績:<font color="#0000FF">67</font><br>請輸入第 3 科的成績:<font color="#0000FF">52</font><br>請輸入第 4 科的成績:<font color="#0000FF">79</font><br>請輸入第 5 科的成績:<font color="#0000FF">94</font><br><font color="#0000FF">&gt;= 60: 67 79 94<br> &lt; 60: 48 52</font><hr> </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0318_files/109990007-2024-0318-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode"># 1
+n = 5
+count = 0
+over_60 = "&gt;= 60:"
+less_60 = "&lt; 60:"
+
+while count &lt; n:
+    inp = input(f"number {count + 1}:")
+    value = int(inp)
+    if value &gt;= 60:
+        over_60 = over_60 + f" {str(value)}"
+    else:
+        less_60 += f" {str(value)}"
+    count = count + 1 # count += 1
+print("&gt;= 60:", over_60)
+print(" &lt; 60:", less_60)</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請使用<font color="#0000FF">單層的 for-in</font>，來完成下列文字圖形的輸出。<br><hr><font color="#0000FF">1<br>12<br>123<br>1234<br>12345</font><hr> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0318_files/109990007-2024-0318-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def print_number_pattern():
+    for i in range(1, 6):  # Looping from 1 to 5
+        print("".join(str(j) for j in range(1, i + 1)))
+print_number_pattern()
+        
+</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise2">
+ <div onclick="hideOrShow(2)"><pre>題目：3<br>請使用<font color="#0000FF">單層的 for-in</font>，來完成下列文字圖形的輸出。<br><hr><font color="#0000FF">        9<br>       89<br>      789<br>     6789<br>    56789<br>   456789<br>  3456789<br> 23456789<br>123456789</font><hr> </pre>
+</div> <div class="myImage" id="myImage2" name="image2">   <img src="./109990007-2024-0318_files/109990007-2024-0318-3.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode2" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def print_inverted_number_pattern():
+    for i in range(9, 0, -1):  # Looping from 9 to 1
+        line = ' ' * (i - 1) + ''.join(str(j) for j in range(i, 10))
+        print(line)
+print_inverted_number_pattern()</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise3">
+ <div onclick="hideOrShow(3)"><pre>題目：4<br>msg = "台北科技大學" + "<font color="#0000FF">你的班級與姓名</font>"<br>請使用上述的訊息，完成下列文字圖形的輸出。<br>例如，<br>msg = "<font color="#0000FF">台北科技大學不分系王大同</font>"<br>輸出如下:<br><font color="#0000FF">台北科技大學不分系王大同<br>同台北科技大學不分系王大<br>大同台北科技大學不分系王<br>王大同台北科技大學不分系<br>系王大同台北科技大學不分<br>分系王大同台北科技大學不<br>不分系王大同台北科技大學<br>學不分系王大同台北科技大<br>大學不分系王大同台北科技<br>技大學不分系王大同台北科<br>科技大學不分系王大同台北<br>北科技大學不分系王大同台</font> </pre>
+</div> <div class="myImage" id="myImage3" name="image3">   <img src="./109990007-2024-0318_files/109990007-2024-0318-4.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode3" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def print_rotated_message(msg):
+    for i in range(len(msg)):
+        # Rotate the string by slicing and concatenating
+        rotated_msg = msg[-i:] + msg[:-i]
+        print(rotated_msg)
+# Test message
+test_msg = "台北科技大學不分系王大同"
+print_rotated_message(test_msg)</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
