@@ -22,7 +22,7 @@ def string_length(msg):
     return length
 n = len(msg)
 for i in range( len(msg) ):
-    print(' ' * ((string_length(msg[0:(len(msg)- i - 1)]))), end='')
+    print(' ' * ((string_length(msg[0:(len(msg)- i - 1)]))), end=' ')
     print(f"{msg[-(i+1):]}")
 
     # 3
