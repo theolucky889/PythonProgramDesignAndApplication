@@ -11,7 +11,7 @@ def string_length(msg):
 string_length("abc北科大")	
 
 # 2
-msg = "電機系112310101王晨"
+msg = "EECS109990007鄧仲淵"
 def string_length(msg):
     length = 0
     for m in msg:
