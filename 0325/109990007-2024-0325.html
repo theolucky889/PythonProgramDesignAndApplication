@@ -1,0 +1,167 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0325/109990007-2024-0325.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=3;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: IEECS - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br>請寫一個函式用來回傳給定字串中的內容會佔幾格。<br><font color="#0000FF">一般的 ASCII 符號會佔一格，中文則會佔兩格的位置</font>。<br>可以簡單地使用 <font color="#0000FF">ord(字元)</font> 來判斷其是否為 ASCII 字元。<br><br><font color="#00FF00">def <font color="#00FF00">string_length(msg)</font>:<br>	...<br>	return length</font><br>	<br>例如，<font color="#0000FF">msg = "abc北科大"</font>，<br>則在呼叫 <font color="#0000FF">string_length(msg)</font> 後，會回傳數字 9。 </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0325_files/109990007-2024-0325-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def string_length(msg):
+    length = 0
+    for m in msg:
+        if ord(m) &lt; 128:
+            length += 1
+        else:
+            length += 2
+    
+    return length
+string_length("abc北科大")	</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請將你個人的資料填入變數 msg 中，接著寫Python程式，印出下列的文字排列圖形(<font color="#800000">請不要使用逐列印出的方式！</font>)。<br>其中 msg = "<font color="#0000FF">你的班級學號姓名</font>"。<br>例如，<br><font color="#0000FF">msg = "不分系54007王大同"</font>，記得中文字佔兩個位置的特性，完成下列圖形訊息的列印。<br><hr><font color="#0000FF">               同<br>             大同<br>           王大同<br>          7王大同<br>         07王大同<br>        007王大同<br>       4007王大同<br>      54007王大同<br>    系54007王大同<br>  分系54007王大同<br>不分系54007王大同</font><hr><br>(* <font color="#0000FF">你可以引用上一題中建立的函式: string_length(msg)，再搭配動態格式來列印出上述指定的內容</font>。) </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0325_files/109990007-2024-0325-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">msg = "EECS109990007鄧仲淵"
+def string_length(msg):
+    length = 0
+    for m in msg:
+        if ord(m) &lt; 128:
+            length += 1
+        else:
+            length += 2
+    return length
+n = len(msg)
+for i in range( len(msg) ):
+    print(' ' * ((string_length(msg[0:(len(msg)- i - 1)]))), end='')
+    print(f"{msg[-(i+1):]}")</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise2">
+ <div onclick="hideOrShow(2)"><pre>題目：3<br><font color="#0000FF">namestr = "林豐祥、伊姿和、唐雅婷、陳弘婷、杜淑娟、曹俐火、王郁婷、吳鈺桂、陳瑞瑜、郭志豪、郭天芝"</font><br>請將上述的人名資料(namestr)進行拆解，再把同姓的人集合起來(<font color="#0000FF">對其排序即可</font>)。<br>其中，<font color="#0000FF">取出姓氏的分法: 只要取出姓名中的第一個字，此題不考慮複姓</font>。<br><br>請統計共有多少個不同的姓氏，各出現多少次？(<font color="#0000FF">限用串列來處理！</font>)<br><hr>做法參考:<br>1) 拆解人名，取得'人名串列'。<br>2) 對'人名串列'進行排序。<br>3) 針對排序後的'人名串列'進行分析與統計。<br>例如，上述資料<br>先將 namestr拆解成 names 如下:<br><font color="#0000FF">names = ['林豐祥', '伊姿和', '唐雅婷', '陳弘婷', '杜淑娟', '曹俐火', '王郁婷', '吳鈺桂', '陳瑞瑜', '郭志豪', '郭天芝']</font><br><br>取出 names 中的姓氏部分:<br><font color="#0000FF">surnames = ['林', '伊', '唐', '陳', '杜', '曹', '王', '吳', '陳', '郭', '郭']</font><br><br>對進行預設的排序:<br><font color="#0000FF">surnames = ['伊', '吳', '唐', '曹', '杜', '林', '王', '郭', '郭', '陳', '陳']</font><br><br>寫 Python 程式對 surnames 做統計的工作，最後列出如下的統計結果:<br><font color="#0000FF">伊: 1<br>吳: 1<br>唐: 1<br>曹: 1<br>杜: 1<br>林: 1<br>王: 1<br>郭: 2<br>陳: 2</font><hr> </pre>
+</div> <div class="myImage" id="myImage2" name="image2">   <img src="./109990007-2024-0325_files/109990007-2024-0325-3.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode2" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">namestr = "林豐祥、伊姿和、唐雅婷、陳弘婷、杜淑娟、曹俐火、王郁婷、吳鈺桂、陳瑞瑜、郭志豪、郭天芝"
+names = namestr.split('、')
+
+surnames = [name[0] for name in names]
+surnames.sort()
+
+surname_counts = {}
+for surname in surnames:
+    if surname in surname_counts:
+        surname_counts[surname] += 1
+    else:
+        surname_counts[surname] = 1
+
+for surname, count in surname_counts.items():
+    print(f"{surname}: {count}")</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
