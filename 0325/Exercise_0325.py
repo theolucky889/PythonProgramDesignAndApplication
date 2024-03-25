@@ -27,10 +27,17 @@ for i in range( len(msg) ):
 
     # 3
 namestr = "林豐祥、伊姿和、唐雅婷、陳弘婷、杜淑娟、曹俐火、王郁婷、吳鈺桂、陳瑞瑜、郭志豪、郭天芝"
-# 拆解字串:
 names = namestr.split('、')
-surnames = [n[0] for n in names]
+
+surnames = [name[0] for name in names]
 surnames.sort()
-for i in range(len(surnames)):
-    print(surnames[i]+":", end=' ')
-    print(surnames.count(surnames[i]))
+
+surname_counts = {}
+for surname in surnames:
+    if surname in surname_counts:
+        surname_counts[surname] += 1
+    else:
+        surname_counts[surname] = 1
+
+for surname, count in surname_counts.items():
+    print(f"{surname}: {count}")
