@@ -1,0 +1,178 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0401/109990007-2024-0401.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=2;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br><hr>星座:日期範圍<br><font color="#0000FF">魔羯座:12.22~1.19 <br>水瓶座:1.20~2.18  <br>雙魚座:2.19~3.20  <br>牡羊座:3.21~4.19  <br>金牛座:4.20~5.20  <br>雙子座:5.21~6.20  <br>巨蟹座:6.21~7.22  <br>獅子座:7.23~8.22  <br>處女座:8.23~9.22  <br>天秤座:9.23~10.22 <br>天蠍座:10.23~11.21<br>射手座:11.22~12.21</font><hr><br>請參考上述的星座資料，寫一個Python函式，讓使用者<font color="#0000FF">輸入月與日</font>的資料後，<br>接著會<font color="#0000FF">顯示這一天對應的星座名稱，同時印出該星座的是日期範圍</font>，方便讓使用者再次確認。 </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0401_files/109990007-2024-0401-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">constellation_dates = {
+    '魔羯座': "12.22~1.19",
+    '水瓶座': "1.20~2.18",
+    '雙魚座': "2.19~3.20",
+    '牡羊座': "3.21~4.19",
+    '金牛座': "4.20~5.20",
+    '雙子座': "5.21~6.20",
+    '巨蟹座': "6.21~7.22",
+    '獅子座': "7.23~8.22",
+    '處女座': "8.23~9.22",
+    '天秤座': "9.23~10.22",
+    '天蠍座': "10.23~11.21",
+    '射手座': "11.22~12.21",
+}
+
+def get_constellation(month, day):
+    for constellation, date_range in constellation_dates.items():
+        start_month, start_day, end_month, end_day = map(int, date_range.replace('~', '.').split('.'))
+
+        if (month == start_month and day &gt;= start_day) or (month == end_month and day &lt;= end_day):
+            return constellation, f'{start_month}.{start_day} ~ {end_month}.{end_day}'
+       
+        if start_month &gt; end_month:
+            if (month == start_month and day &gt;= start_day) or (month == 1 and day &lt;= end_day):
+                return constellation, f'{start_month}.{start_day} ~ {end_month}.{end_day}'
+            
+    return None, None
+    
+month = int(input('Enter a month (in numbers): '))
+date = int(input('Enter a Date (in numbers): '))
+constellation, date_range = get_constellation(month, date)
+print(f'Your Constellation is {constellation}: ({date_range})')</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br><font color="#0000FF">namestr = "廖靜宜、吳百凱、陳懿沛、蔡仁芸、王彥君、陳鈺瑋、林珊群、許萬昌、黃靜東、陳佩舜、林怡喜"</font><br>姓名資料如上，請Python程式將同姓的人名集合起來。<hr><br>其中，我們假設<br>name = <font color="#0000FF">姓氏</font> + <font color="#0000FF">名字</font><br>     = <font color="#0000FF">name[0]</font> + <font color="#0000FF">name[1:]</font><br>再逐一確認姓氏是否已經存在? <br>1) 如果是，就將名字附加上去，<font color="#0000FF">名字間需要用逗點隔開</font>。<br>2) 否則，另行<font color="#0000FF">將此姓氏新增至dict中，同時把名字當成是它的值</font>，來做成記錄。<br>  <br>最後，請完全依照下列的格式，輸出完成拆解分析後的結果。<br><hr><font color="#0000FF">廖: 靜宜<br>吳: 百凱<br>陳: 懿沛,鈺瑋,佩舜<br>蔡: 仁芸<br>王: 彥君<br>林: 珊群,怡喜<br>許: 萬昌<br>黃: 靜東</font><hr> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0401_files/109990007-2024-0401-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def group_names_surname(namestr):
+    names = namestr.split('、')
+    surname_dict = {}
+
+    for name in names:
+        surname = name[0]
+        given_name = name[1:]
+
+        if surname in surname_dict:
+            surname_dict[surname].append(given_name)
+        else:
+            surname_dict[surname] = [given_name]
+            
+    return surname_dict
+
+def print_name(surname_dict):
+    for surname, given_names in surname_dict.items():
+        print(f'{surname}: {", ".join(given_names)}')
+
+namestr = "廖靜宜、吳百凱、陳懿沛、蔡仁芸、王彥君、陳鈺瑋、林珊群、許萬昌、黃靜東、陳佩舜、林怡喜"
+surname_dict = group_names_surname(namestr)
+print_name(surname_dict)</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
