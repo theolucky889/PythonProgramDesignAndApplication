@@ -1,0 +1,154 @@
+
+<!-- saved from url=(0079)http://114.34.49.232/~richwang/exercise/112-2/Python-2/109990007-2024-0415.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=2;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br><font color="blue">請不要使用課堂上未教過或用過的模組或函式庫，否則該題不給分！</font> <hr><br><br>請寫 Python 程式，<br>1)首先建立一個 "你的學號.txt" 的檔案，把 "你的班級,學號,姓名"，寫入檔案。<br>2)接著依照下列給定的 msg 字串，產生其下方指定的文字圖形，並將該文字圖形也寫入上述的檔案中。<br>(<font color="blue">請搭配 for-in 與 字串切片 來求解，若以逐項印出方式作答，則此部分不給分！</font>)<br>msg = "abcdefghi",<br><hr>abcdefghi<br>iabcdefgh<br>hiabcdefg<br>ghiabcdef<br>fghiabcde<br>efghiabcd<br>defghiabc<br>cdefghiab<br>bcdefghia<hr> </pre>
+</div> <div class="myImage" id="myImage0" name="image0" style="display: none;">   <img src="./109990007-2024-0415(Writing)_files/109990007-2024-0415-1.png" border="1"> </div>
+ <div class="myCode" id="myCode0" style="display: none;">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">file_path = r"C:\Users\CNC\Downloads\109990007.txt"
+
+with open(file_path, 'r', encoding='utf-8') as file:
+    msg = file.read().strip() 
+
+for i in range(len(msg)):
+    rotated_msg = msg[-i:] + msg[:-i]
+    print(rotated_msg)</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請先下載資料檔案: <a href="http://114.34.49.232/~richwang/exercise/112-2/Python-2/data/scores-H.dat" target="_blank">scores-H.dat</a>。(<font color="blue">可以按滑鼠右鍵下載</font>)<br>1)接著請將檔案資料讀入並進行必要的拆解，再將每個人的資料取出後，放入一個串列中，<br>2)再把三科成績的加總結果，附加到上述串列的最後方。<br>3)最後將每個人的成績資料(串列形式)，再整合於 scores 串列中。<br>最終得到的輸出結果，如下方所示。<br><font color="blue">參考輸出結果:<br>scores =<br>[['A001', 47, 13, 17, 77],<br> ['A002', 45, 27, 30, 102],<br> ['A003', 54, 14, 45, 113],<br> ...<br> ['A009', 64, 94, 96, 254],<br> ['A010', 62, 44, 99, 205]]</font> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0415(Writing)_files/109990007-2024-0415-2.png" border="1"> </div>
+ <div class="myCode" id="myCode1">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">file_path = r'C:\Users\CNC\Downloads\scores-H.dat'
+
+scores = []
+
+with open(file_path, 'r', encoding='cp950') as file:
+    for line in file:
+        data = line.strip().split()
+            
+        student_id = data[0]
+        scores_numbers = list(map(int, data[1:]))
+            
+        total_score = sum(scores_numbers)
+            
+        scores_numbers.append(total_score)
+            
+        student_scores = [student_id] + scores_numbers
+            
+        scores.append(student_scores)
+
+print("scores =")
+for score in scores:
+    print(score)</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
