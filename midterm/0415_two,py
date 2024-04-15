@@ -1,0 +1,22 @@
+file_path = r'C:\Users\CNC\Downloads\scores-H.dat'
+
+scores = []
+
+with open(file_path, 'r', encoding='cp950') as file:
+    for line in file:
+        data = line.strip().split()
+            
+        student_id = data[0]
+        scores_numbers = list(map(int, data[1:]))
+            
+        total_score = sum(scores_numbers)
+            
+        scores_numbers.append(total_score)
+            
+        student_scores = [student_id] + scores_numbers
+            
+        scores.append(student_scores)
+
+print("scores =")
+for score in scores:
+    print(score)
