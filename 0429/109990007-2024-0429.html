@@ -1,0 +1,169 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0429/109990007-2024-0429.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=3;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br>請模仿級數遞迴相加的例子，寫一個計算階乘值的遞迴函式。<br>其中階乘的定義: <font color="#0000FF">factorial(n) = n! = 1*2*...*(n-1)*n</font>。<br>最後請透過呼叫這個函式，來印出 <font color="#0000FF">1 ~ 25 的階乘</font>計算結果:(<font color="#0000FF">請重現相同的格式</font>)<br><hr><font color="#0000FF"> 1! = 1<br> 2! = 2<br> 3! = 6<br> 4! = 24<br> 5! = 120<br> 6! = 720<br> 7! = 5040<br> 8! = 40320<br> 9! = 362880<br>10! = 3628800<br>11! = 39916800<br>12! = 479001600<br>13! = 6227020800<br>14! = 87178291200<br>15! = 1307674368000<br>16! = 20922789888000<br>17! = 355687428096000<br>18! = 6402373705728000<br>19! = 121645100408832000<br>20! = 2432902008176640000<br>21! = 51090942171709440000<br>22! = 1124000727777607680000<br>23! = 25852016738884976640000<br>24! = 620448401733239439360000<br>25! = 1551121004333098598400000</font><hr> </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0429_files/109990007-2024-0429-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+# Print factorial 1 - 25
+for i in range(1, 26):
+    result = factorial(i)
+    print(f"{i}! = {result}")</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請寫一個Python程式，使用遞迴方法計算 <font color="#0000FF">Fibonacci numbers</font>。<br>其中 Fibonacci numbers 的生成規則定義如下: <br>1) <font color="#0000FF">fib(0) = fib(1) = 1</font><br>2) <font color="#0000FF">fib(n) = fib(n-1) + fib(n-2)</font><br>即<font color="#0000FF">首兩項的值均為1，其後各項的值為其前兩項的和</font>。<br>例如，<br>Fibonacci numbers: <font color="#0000FF">1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...</font> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0429_files/109990007-2024-0429-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def fibonacci(n):
+    if n &lt;= 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+# print fibonacci numbers
+print("Fibonacci numbers: ", end="")
+for i in range(10):  # adjust the range of fibonacci numbers
+    print(fibonacci(i), end=",")</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise2">
+ <div onclick="hideOrShow(2)"><pre>題目：3<br>根據 Fibonacci numbers 的定義，其實透過串列應該可以更輕鬆地生成此數列。<br>請寫一個Python函式: <font color="#0000FF">show_fib(n)</font>，會回傳<font color="#0000FF">包含指定項數 n 的 Fibonacci 串列</font>。<br>最後請使用者輸入 n，再呼叫該函式，並請顯示回傳的 Fibonacci 串列內容。<br>如果輸入的 <font color="#0000FF">n &lt;= 0</font>，則請顯示"<font color="#0000FF">請重新輸入！</font>"，<font color="#0000FF">並等待使用者的再次輸入</font>。<br><br>例如，參考輸出如下:<br><hr>請輸入要顯示幾項的 Fibonacci 數列: <font color="#0000FF">0</font><br><font color="#0000FF">請重新輸入！</font><br><br>請輸入要顯示幾項的 Fibonacci 數列: <font color="#0000FF">12</font><br><font color="#0000FF">[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</font><hr> </pre>
+</div> <div class="myImage" id="myImage2" name="image2">   <img src="./109990007-2024-0429_files/109990007-2024-0429-3.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode2" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def show_fib(n):
+    if n &lt;= 0:
+        return None
+    fib_sequence = []
+    a, b = 1, 1
+    for i in range(n):
+        if i &lt; 2:
+            fib_sequence.append(1)
+        else:
+            a, b = b, a + b
+            fib_sequence.append(b)
+    return fib_sequence
+
+while True:
+    n = int(input("請輸入要顯示幾項的 Fibonacci 數列: "))
+    if n &lt;= 0:
+        print("請重新輸入！")
+    else:
+        fib_list = show_fib(n)
+        print(fib_list)
+        break</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
