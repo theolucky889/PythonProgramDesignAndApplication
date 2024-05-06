@@ -1,0 +1,211 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0506/109990007-2024-0506.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=3;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br><font color="#0000FF">msg</font> = """<br><font color="#0000FF">cats are lovely and lazy animals.<br>Cats are lovely and lazy animals.<br>CAts are lovely and lazy animals.<br>Cats are lovely and lazy animals.<br>cAts are lovely and lazy animals.<br>cATs are lovely and lazy animals.<br>caTs are lovely and lazy animals.<br>CaTs are lovely and lazy animals.</font>"""<br><br>限用 <font color="#0000FF">RE(Regular Expression)</font> 將上述資料中的所有 <font color="#0000FF">cat-like</font> 的內容，通通改成 <font color="#0000FF">CAT</font>。 </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0506_files/109990007-2024-0506-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">import re
+
+msg = """
+cats are lovely and lazy animals.
+Cats are lovely and lazy animals.
+CAts are lovely and lazy animals.
+Cats are lovely and lazy animals.
+cAts are lovely and lazy animals.
+cATs are lovely and lazy animals.
+caTs are lovely and lazy animals.
+CaTs are lovely and lazy animals."""
+
+result = re.sub(r'[cC][aA][tT]s?', 'CAT', msg)
+
+print(result)
+</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>已知函式 <font color="#0000FF">fill_table_2d</font> 如下，可以用來將<font color="#0000FF">矩形形式的二維陣列內容，存入表格中</font>。<br><hr> <img src="./109990007-2024-0506_files/fill_table_2d-code.jpg"> <hr><br>請嘗試<font color="#0000FF">以生成的方式</font>(<font color="#0000FF">不要用逐字打出</font>的方式)，來建構二維串列(如下圖的輸出)，再將其代入 <font color="#0000FF">fill_table_2d</font> 中存成表格。<br><hr> <img src="./109990007-2024-0506_files/Table4x5.jpg"> <hr> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0506_files/109990007-2024-0506-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">def create_2d_list():
+    return [[5 * r + c + 1 for c in range(5)] for r in range(4)]
+
+matrix = create_2d_list()
+print(matrix)
+
+def fill_table_2d(list2d):
+    rows = len(list2d)
+    cols = len(list2d[0])
+    html = "&lt;style&gt;th { padding: 6px; }&lt;/style&gt;&lt;table border='1'&gt;"
+    for r in range(rows):
+        html += "&lt;tr&gt;"
+        for c in range(cols):
+            html += f"&lt;th&gt;{list2d[r][c]}&lt;/th&gt;"
+        html += "&lt;/tr&gt;"
+    html += "&lt;/table&gt;"
+    return html
+
+html_output = fill_table_2d(matrix)
+print(html_output)
+
+def save_html_to_file(html_content, file_name):
+    with open(file_name, 'w') as file:
+        file.write(html_content)
+    print(f"HTML 已保存到 {file_name}")
+
+html_output = fill_table_2d(matrix)
+
+save_html_to_file(html_output, 'table_output.html')
+</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise2">
+ <div onclick="hideOrShow(2)"><pre>題目：3<br>請讀入檔案 <a href="http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0506/data/112_student-TaipeiTech.csv" target="_blank">112_student-TaipeiTech.csv</a> 的內容，同時將其拆解成二維陣列。<br>並使用函式 <font color="#0000FF">fill_table_2d</font>，將上述分解的內容，填入 table 中，並存成 "<font color="#0000FF">你的學號.html</font>"。<br>最後將 "<font color="#0000FF">你的學號.html</font>" 載入瀏覽器，並把結果截圖上傳。<font color="#0000FF">但如果內容太長，可以截前半段的圖即可</font>。 </pre>
+</div> <div class="myImage" id="myImage2" name="image2">   <img src="./109990007-2024-0506_files/109990007-2024-0506-3.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode2" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">import csv
+
+def read_csv_with_different_encodings(file_path):
+    encodings = ['utf-8', 'GBK', 'Big5', 'Windows-1252']
+    for enc in encodings:
+        try:
+            with open(file_path, mode='r', encoding=enc) as file:
+                csv_reader = csv.reader(file)
+                return [row for row in csv_reader]  # 如果成功，直接返回結果
+        except UnicodeDecodeError:
+            print(f"試圖使用 {enc} 編碼失敗，嘗試下一個編碼。")
+    raise ValueError("無法讀取文件，所有編碼嘗試失敗。")
+
+def fill_table_2d(list2d):
+    rows = len(list2d)
+    cols = len(list2d[0])
+    html = "&lt;style&gt;th { padding: 6px; }&lt;/style&gt;&lt;table border='1'&gt;"
+    for r in range(rows):
+        html += "&lt;tr&gt;"
+        for c in range(cols):
+            html += f"&lt;th&gt;{list2d[r][c]}&lt;/th&gt;"
+        html += "&lt;/tr&gt;"
+    html += "&lt;/table&gt;"
+    return html
+
+def save_html_to_file(html_content, file_name):
+    with open(file_name, 'w', encoding='utf-8') as file:
+        file.write(html_content)
+    print(f"HTML 已保存到 {file_name}")
+
+data = read_csv_to_2d_listdata = read_csv_with_different_encodings(r'C:\Users\CNC\Downloads\112_student-TaipeiTech.csv')
+
+html_output = fill_table_2d(data)
+
+save_html_to_file(html_output, '109990007.html')
+</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
