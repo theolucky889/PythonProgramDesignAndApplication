@@ -1,0 +1,207 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0513/109990007-2024-0513.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=2;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br>請前往<a href="https://data.gov.tw/" target="_blank">政府開放資料平台</a>，使用關鍵字"<font color="#0000FF">大專院校各校科系別學生數</font>"，<br>來查找"<font color="#0000FF">112學年大專院校各校科系別學生數(CSV檔)</font>"的資料。<br>請找出下列欄位中，所有北科大的資料。<br><font color="#0000FF">學年度, 學校名稱, 科系名稱, 日間∕進修別, 等級別, 總計, 男生計, 女生計</font><br>以上是部分資料的參考截圖:<br><hr> <img src="./109990007-2024-0513_files/TaipeiTech-Part.jpg"> <hr> </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0513_files/109990007-2024-0513-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">import pandas as pd
+
+def find_and_display(csv_file):
+    df = pd.read_csv(csv_file, encoding='utf-8')
+    
+    filtered_df = df[df['學校名稱'].str.contains('國立臺北科技大學')]
+    
+    result_df = filtered_df[['學年度', '學校名稱', '科系名稱', '日間∕進修別', '等級別', '總計', '男生計', '女生計']]
+
+    return result_df
+
+csv_path = '112_students.csv' 
+
+data_frame = find_and_display(csv_path)
+if data_frame.empty:
+    print('No data found.')
+else:
+    display(data_frame) </textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請前往<a href="https://stats.moe.gov.tw/bookcase/" target="_blank">教育部電子書櫃</a>，將該網站第一頁的電子書影像連結取出，<br>接著做成 <font color="#0000FF">兩列五行</font> 的 HTML 表格。並請將內容存成 "<font color="#0000FF">你的學號.html</font>"。<br><hr> <img src="./109990007-2024-0513_files/eBook-2024-0512.jpg"> <hr> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0513_files/109990007-2024-0513-2.html" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">image_links = [
+    "https://stats.moe.gov.tw/bookcase/smallpic/Higher/113.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/High/113.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/Basic/113.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/Oversea/113.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/Native/113.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/Son_of_Foreign_All/113.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/International_Comparison/112.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/Education_Statistics/112.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/Education_in_Taiwan/112.png",
+    "https://stats.moe.gov.tw/bookcase/smallpic/High_Graduate/112.png"
+]
+
+html_content = '''
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ebook Display&lt;/title&gt;
+    &lt;style&gt;
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+        }}
+        td {{
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }}
+        img {{
+            width: 100%;
+            max-width: 200px;  # Control the size to be uniform
+            height: auto;
+        }}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;img src="{0}" alt="Book 1"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{1}" alt="Book 2"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{2}" alt="Book 3"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{3}" alt="Book 4"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{4}" alt="Book 5"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;img src="{5}" alt="Book 6"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{6}" alt="Book 7"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{7}" alt="Book 8"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{8}" alt="Book 9"&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;img src="{9}" alt="Book 10"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''.format(*image_links)
+
+output_file = '109990007.html'
+
+with open(output_file, 'w') as file:
+    file.write(html_content)
+
+print(f"HTML file has been created at {output_file}")
+</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
