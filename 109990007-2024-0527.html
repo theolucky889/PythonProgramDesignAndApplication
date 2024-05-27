@@ -1,0 +1,167 @@
+
+<!-- saved from url=(0089)http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0527/109990007-2024-0527.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script language="JavaScript1.2">var total=2;</script>
+<style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "�ө���","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 1px 1px 1px 1px; 
+	}
+	.myImage
+	{  float: left; 
+	   max-width: 800px;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  float: left;
+     color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+      function hideAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "none";
+            }	   
+	  }
+      function showAll()
+	  {  
+	    var str, el;
+            for (k=0; k<total; ++k)
+            {  str = "myImage"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+
+               str = "myCode"+k;
+               el = document.getElementById(str);
+               el.style.display = "";
+            }	   
+	  } 
+	  function hideOrShow(n)
+	  {  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	  } 
+
+	  function checkData(form) // �ǰe��ƫe����B��������� 
+	  { 
+	     if ( form.stuNo.value=="" )
+		   {  alert("�Ǹ��O�@�w�n���աI");
+	          return;
+	       }
+	     else if ( form.stuName.value=="" )
+	       {  alert("�z�|��m�W�F�I");
+	          return;
+	       }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("�ֱK�X�O���檺�I");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // �ˬd��i�H��߶ǰe��ƤF�I    
+	  }
+  </script> 
+</head>
+<body bgcolor="#E4F3D3">
+<table border="1" width="100%"><caption id="title">Python程式設計概論與應用 博雅課程(二)
+: 全校各系 - 鄧仲淵 (109990007)</caption>
+<tbody><tr><td><table border="0" bgcolor="#F5E8C1" width="100%"><tbody><tr><td align="center"><input type="button" name="score" value="~&gt;&lt;~"></td> <td align="right">  <input type="button" value="Hide All" onclick="hideAll();">  <input type="button" value="Show All" onclick="showAll();"></td></tr></tbody></table></td></tr>
+<tr><td>
+<div id="exercise" name="exercise0">
+ <div onclick="hideOrShow(0)"><pre>題目：1<br>請解壓縮 <a href="http://114.34.49.232/~richwang/exercise/112-2/Python-2/2024-0527/data/Pictures.zip" target="_blank">Pictures.zip</a>，並把解壓縮後目錄中所有的影像通通顯示在瀏覽器上。<br>請將所有的影像以下列的HTML格式包裝起來，再存成 <font color="#0000FF">see.html</font>，再由網頁瀏覽器觀察這些影像輸出的結果。<br>影像的HTML格式: <font color="#0000FF">&lt;img src='./Pictures/xyz.jpg' height=250 /&gt;</font> </pre>
+</div> <div class="myImage" id="myImage0" name="image0">   <img src="./109990007-2024-0527_files/109990007-2024-0527-1.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode0" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">import os
+import zipfile
+
+with zipfile.ZipFile('Pictures.zip', 'r') as f:
+    f.extractall('Pictures')
+
+imgs = [f for f in os.listdir('C:/Users/CNC/Downloads/Python-2024-0527/Python-2024-0527/Pictures') if f.lower().endswith(('.jpg', '.avif', 'webp'))]
+
+html = ''
+
+for img in imgs:
+    html += f'&lt;img src="./Pictures/{img}" height=250px"&gt;'
+
+with open('index.html', 'w') as f:
+    f.write(html)</textarea> </div>
+</div></td></tr>
+<tr><td>
+<div id="exercise" name="exercise1">
+ <div onclick="hideOrShow(1)"><pre>題目：2<br>請前往<a href="https://stats.moe.gov.tw/bookcase/" target="_blank">教育部電子書櫃</a>，<font color="#0000FF">將該網站第一頁的電子書影像連結取出</font>，<br>接著做成<font color="#0000FF">兩列五行的 HTML 表格</font>。並請將內容存成 "<font color="#0000FF">你的學號.html</font>"。<br>請使用 <font color="#0000FF">BeautifulSoup</font> 來解析出需要的網頁 <font color="#0000FF">img</font> 標簽內容。<br><hr> <img src="./109990007-2024-0527_files/eBook-2024-0512.jpg"> <hr> </pre>
+</div> <div class="myImage" id="myImage1" name="image1">   <img src="./109990007-2024-0527_files/109990007-2024-0527-2.png" border="1" style="max-width:960px;"> </div>
+ <div class="myCode" id="myCode1" style="">   <textarea cols="96" rows="25" name="myCode[]" id="myCode">import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
+url = 'https://stats.moe.gov.tw/bookcase/'
+r = requests.get(url)
+
+html_content = r.text
+
+s = BeautifulSoup(html_content, 'html.parser')
+
+img_tags = s.find_all('img', class_='datalistImg')
+
+image_links = [urljoin(url, img['src']) for img in img_tags]
+book_links = [urljoin(url, img.find_parent('a')['href']) for img in img_tags]
+
+table = '&lt;table&gt;'
+for i in range(0, len(image_links), 5):
+    table += '&lt;tr&gt;'
+    for img_link, book_link in zip(image_links[i:i+5], book_links[i:i+5]):
+        table += f"&lt;td&gt;&lt;a href='{book_link}' target='_blank'&gt;&lt;img src='{img_link}' height='250'&gt;&lt;/a&gt;&lt;/td&gt;"
+    table += '&lt;/tr&gt;'
+table += '&lt;/table&gt;'
+
+with open('109990007_hw2.html', 'w') as f:
+    f.write(table)
+
+</textarea> </div>
+</div></td></tr>
+</tbody></table>
+
+</body></html>
